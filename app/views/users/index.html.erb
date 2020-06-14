@@ -3,6 +3,14 @@
   <h1>ユーザー一覧</h1>
 </div>
 
+<div class="search-button">
+  <P>ユーザー名検索</P>
+  <%= form_tag(users_path, :method => "get") do %>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "検索", :name => nil %>  
+  <% end %>
+</div>  
+ 
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <%= will_paginate %>
@@ -17,9 +25,9 @@
         <tr>
           <td><%= link_to user.name, user %>
             <% if current_user.admin? && !current_user?(user) %>
-              <%= link_to "基本情報編集", edit_basic_info_user_path(user), class: "btn btn-success" %>
-              <%= link_to "削除", user, method: :delete,
-                  data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %>
+              <%= link_to "| 基本情報編集", edit_basic_info_user_path(user) %>
+              <%= link_to "| 削除", user, method: :delete,
+                  data: { confirm: "削除してよろしいですか？" } %>
             <% end %>
           </td>
         </tr>
