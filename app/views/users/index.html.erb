@@ -1,6 +1,11 @@
 <% provide(:title, 'All Users') %>
+
 <div class="center">
-  <h1>ユーザー一覧</h1>
+  <h1><% if params[:search] %>検索結果</h1>
+  <% else %>
+    <% params([:search].blank) %>
+    <h1>ユーザー一覧</h1>
+  <% end %>
 </div>
 
 <div class="search-button">
