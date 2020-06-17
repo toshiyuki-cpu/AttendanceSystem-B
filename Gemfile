@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'rails-i18n'
+gem 'rounding'
 gem 'bcrypt'
 gem 'faker'
 gem 'bootstrap-sass'
